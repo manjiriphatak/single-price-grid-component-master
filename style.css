@@ -1,0 +1,154 @@
+:root {
+  --Cyan: hsl(179, 62%, 43%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+  --body-box-shadow: hsla(216, 22%, 67%, 0.555);
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background-color: hsl(204, 43%, 93%);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-family: "Karla", sans-serif;
+}
+
+.grid-container {
+  margin: 5rem 1.9rem;
+  text-align: left;
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  border-radius: 0.4rem;
+  box-shadow: 0px 0px 30px var(--body-box-shadow);
+  max-width: 650px;
+}
+
+.content {
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+/*hero section*/
+
+.hero-section {
+  background-color: white;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+.heading {
+  color: var(--Cyan);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.sub-heading {
+  color: var(--Bright-Yellow);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.description {
+  color: var(--Grayish-Blue);
+  line-height: 2;
+  font-size: 0.85rem;
+}
+
+/*sunscription-section*/
+
+.subscription-section {
+  background-color: hsl(179, 62%, 43%);
+  color: white;
+  border-bottom-left-radius: 0.4rem;
+}
+
+.subscription-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.sunscription-description {
+  position: relative;
+  top: -1rem;
+  opacity: 0.7;
+}
+
+.amount {
+  font-size: 2.3rem;
+}
+.time-frame {
+  font-size: 1rem;
+  font-weight: 400;
+  position: relative;
+  top: -0.5rem;
+  opacity: 0.5;
+}
+.button a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+.button {
+  text-align: center;
+  background-color: var(--Bright-Yellow);
+  padding: 1rem;
+  border-radius: 0.4rem;
+  box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.63);
+}
+/*why-us-section*/
+
+.why-us-section {
+  background-color: hsla(179, 62%, 43%, 0.801);
+  color: white;
+  border-bottom-right-radius: 0.4rem;
+}
+.reasons-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.reasons {
+  list-style: none;
+  line-height: 1.4rem;
+  opacity: 0.7;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-areas:
+      "hero hero"
+      "subscription reasons";
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-section {
+    grid-area: hero;
+  }
+  .subscription-section {
+    grid-area: subscription;
+  }
+  .why-us-section {
+    grid-area: reasons;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .content {
+    margin: 2.5rem;
+  }
+}
